@@ -1,14 +1,20 @@
+// Create web server
 const http = require('http');
-
+ 
 // Cria o servidor web
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Servidor web funcionando!\n');
+  // Configura o cabeçalho da resposta
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+ 
+  // Envia uma resposta simples
+  res.end('Olá, mundo! Este é um servidor web básico.\n');
 });
-
-// Define a porta e inicia o servidor
+ 
+// Define a porta para o servidor
 const PORT = 3000;
+ 
+// Inicia o servidor
 server.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}/`);
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+ 
